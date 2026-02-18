@@ -6,8 +6,11 @@ from googleapiclient.http import MediaFileUpload
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 
-IG_USERNAME = os.getenv("IG_USERNAME")
-IG_PASSWORD = os.getenv("IG_PASSWORD")
+# IG_USERNAME = os.getenv("IG_USERNAME")
+# IG_PASSWORD = os.getenv("IG_PASSWORD")
+
+IG_USERNAME = "idyllic___soul"
+# IG_PASSWORD = "Deep@jay7795!"
 
 YT_CLIENT_ID = os.getenv("YT_CLIENT_ID")
 YT_CLIENT_SECRET = os.getenv("YT_CLIENT_SECRET")
@@ -75,13 +78,21 @@ def is_short(width, height, duration):
 # Instagram
 # ----------------------------
 
+# def login_instagram():
+#     L = instaloader.Instaloader(
+#         download_video_thumbnails=False,
+#         save_metadata=False,
+#         dirname_pattern=DOWNLOAD_DIR,
+#     )
+#     L.login(IG_USERNAME, IG_PASSWORD)
+#     return L
+
 def login_instagram():
     L = instaloader.Instaloader(
         download_video_thumbnails=False,
         save_metadata=False,
         dirname_pattern=DOWNLOAD_DIR,
     )
-    L.login(IG_USERNAME, IG_PASSWORD)
     return L
 
 
