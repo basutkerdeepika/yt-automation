@@ -81,7 +81,12 @@ def login_instagram():
         save_metadata=False,
         dirname_pattern=DOWNLOAD_DIR,
     )
-    L.login(IG_USERNAME, IG_PASSWORD)
+    try:
+        L.login(IG_USERNAME, IG_PASSWORD)
+    except instaloader.exceptions.LoginException as e:
+        print(f"Login failed: {e}")
+        print("Instagram requires additional verification. Please visit the URL in the error message to complete the challenge.")
+        raise
     return L
 
 
